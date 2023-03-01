@@ -1,0 +1,116 @@
+// Table colors
+$table-bg:#eeeeee;
+$plan-header-bg:#34495E;
+$single-table-bg:#fff;
+$table-header:#fff;
+$table-border-color:lighten($plan-header-bg, 60%);
+$plan-price-color: #fff;
+$plan-price-month-color: #8394AE;
+$plan-price-border: lighten($plan-header-bg, 20%);
+#pricing-tables {
+    background-color: $table-bg;
+    padding: 30px 0;
+}
+
+.single-table {
+    background: $single-table-bg;
+    -webkit-transition: all 0.20s linear;
+    transition: all 0.20s linear;
+    &:hover {
+        box-shadow: 0px 3px 3px 0px #888888;
+        -webkit-transition: all 0.20s linear;
+        transition: all 0.20s linear;
+    }
+    & .plan-header {
+        background: $plan-header-bg;
+        color: $table-header;
+        text-transform: capitalize;
+        padding: 2px 0;
+        & h3 {
+            margin: 0;
+            padding: 20px 0 5px 0;
+            text-transform: uppercase;
+        }
+    }
+    & .plan-price {
+        color: $plan-price-color;
+        padding: 10px 0;
+        margin: 0;
+        font-size: 30px;
+        border-top: 2px solid $plan-price-border;
+        font-weight: bold;
+        & span {
+            font-size: 18px;
+            font-weight: normal;
+        }
+    }
+    & ul {
+        margin: 0;
+        padding: 20px 0;
+        list-style: none;
+        & li {
+            padding: 8px 0;
+            margin: 0 20px;
+            border-bottom: 1px solid $table-border-color;
+            font-size: 15px;
+        }
+    }
+    & .plan-submit {
+        display: inline-block;
+        text-decoration: none;
+        margin: 20px 0 30px 0;
+        padding: 10px 40px;
+        border: 1px solid $plan-header-bg;
+        color: $plan-header-bg;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+    /* Bounce To Right */
+    .hvr-bounce-to-right {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        transition-property: color;
+        transition-duration: 0.5s;
+    }
+    .hvr-bounce-to-right:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #34495E;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-property: transform, -webkit-transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+    }
+    .hvr-bounce-to-right:hover,
+    .hvr-bounce-to-right:focus,
+    .hvr-bounce-to-right:active {
+        color: white;
+    }
+    .hvr-bounce-to-right:hover:before,
+    .hvr-bounce-to-right:focus:before,
+    .hvr-bounce-to-right:active:before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+        transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+}
